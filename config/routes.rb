@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  get '/homepage/:design_version', to: 'home#homepage', as: 'homepage'
+  # get '/homepage/:design_version', to: 'home#homepage', as: 'homepage'
+  get '/version1', to: 'home#version1', as: 'version1'
+  get '/version2', to: 'home#version2', as: 'version2'
 end
