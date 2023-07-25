@@ -18,11 +18,11 @@ class HomeController < ApplicationController
   # Note this is not the standard rails version:
   def version1
     @css_file = 'version_1/version_1.css'
-    render 'home/version1/version1'
+    render 'home/version1/version1', layout: 'layouts/version1/version1'
   end
 
   def version2
     @css_file = 'version_2/version_2.css'
-    render 'home/version2/version2'
+    render 'home/version2/version2', layout: 'layouts/version2/version2'
   end
 end
