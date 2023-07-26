@@ -5,10 +5,10 @@ class HomeController < ApplicationController
   #   design_version = params[:design_version]
 
   #   case design_version
-  #   when 'version_1'
-  #     @css_file = 'version_1/version_1.css'
-  #   when 'version_2'
-  #     @css_file = 'version_2/version_2.css'
+  #   when 'version_one'
+  #     @css_file = 'version_one/version_one.css'
+  #   when 'version_two'
+  #     @css_file = 'version_two/version_two.css'
   #   end
 
   #   render 'homepage'
@@ -16,13 +16,13 @@ class HomeController < ApplicationController
 
   # Set up 2 methods to handle 2 different views
   # Note this is not the standard rails version:
-  def version1
-    @css_file = 'version_1/version_1.css'
-    render 'home/version1/version1', layout: 'layouts/version1/version1'
+  def version_one
+    @css_file = 'version_one/version_one.css'
+    render 'home/version_one/version_one', layout: 'layouts/version_one/version_one'
   end
 
-  def version2
-    @css_file = 'version_2/version_2.css'
-    render 'home/version2/version2', layout: 'layouts/version2/version2'
+  def version_two
+    @css_file = 'version_two/version_two.css'
+    render 'home/version_two/version_two', layout: 'layouts/version_two/version_two'
   end
 end
