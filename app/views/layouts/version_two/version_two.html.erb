@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Version Two</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'version_two/version_two', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <h1>This is a header from version two layout</h1>
+    <nav>
+      <ul>
+        <li><%= link_to 'Page 1', version_two_page_one_path %></li>
+        <li><%= link_to 'Page 2', version_two_page_two_path %></li>
+        <li><%= link_to 'Page 3', version_two_page_three_path %></li>
+      </ul>
+    </nav>
+    <%= yield %>
+  </body>
+</html>
