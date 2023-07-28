@@ -45,4 +45,24 @@ class HomeController < ApplicationController
     @css_file = 'version_one/version_one.css'
     render 'home/version_one/page_three', layout: 'layouts/version_one/version_one'
   end
+
+  def version_two
+    @css_file = 'version_two/version_two.css'
+    render 'home/version_two/version_two', layout: 'layouts/version_two/version_two'
+  end
+
+  def version_two_page_one
+    @css_file = 'version_two/version_two.css'
+    render 'home/version_two/page_one', layout: 'layouts/version_two/version_two'
+  end
+
+  def version_two_page_two
+    @css_file = 'version_two/version_two.css'
+    render 'home/version_two/page_two', layout: 'layouts/version_two/version_two'
+  end
+
+  def version_two_page_three
+    @css_file = 'version_two/version_two.css'
+    render 'home/version_two/page_three', layout: 'layouts/version_two/version_two'
+  end
 end

@@ -12,6 +12,13 @@
 
   <body>
     <h1>This is a header from version two layout</h1>
+    <nav>
+      <ul>
+        <li><%= link_to 'Page 1', version_two_page_one_path %></li>
+        <li><%= link_to 'Page 2', version_two_page_two_path %></li>
+        <li><%= link_to 'Page 3', version_two_page_three_path %></li>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>
