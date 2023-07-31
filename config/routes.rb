@@ -6,17 +6,18 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  # get '/homepage/:design_version', to: 'home#homepage', as: 'homepage'
-  # get '/version-one', to: 'home#version_one', as: 'version-one'
-  # get '/version-two', to: 'home#version_two', as: 'version-two'
 
-  get '/version-one', to: 'home#version_one', as: 'version-one'
-  get '/version-one/page-one', to: 'home#version_one_page_one', as: 'version-one-page-one'
-  get '/version-one/page-two', to: 'home#version_one_page_two', as: 'version-one-page-two'
-  get '/version-one/page-three', to: 'home#version_one_page_three', as: 'version-one-page-three'
+  scope '/version-one', as: 'version_one' do
+    get '', to: 'home#version_one', as: 'index'
+    get 'page-one', to: 'home#version_one_page_one', as: 'page_one'
+    get 'page-two', to: 'home#version_one_page_two', as: 'page_two'
+    get 'page-three', to: 'home#version_one_page_three', as: 'page_three'
+  end
 
-  get '/version-two', to: 'home#version_two', as: 'version-two'
-  get '/version-two/page-one', to: 'home#version_two_page_one', as: 'version-two-page-one'
-  get '/version-two/page-two', to: 'home#version_two_page_two', as: 'version-two-page-two'
-  get '/version-two/page-three', to: 'home#version_two_page_three', as: 'version-two-page-three'
+  scope '/version-two', as: 'version_two' do
+    get '', to: 'home#version_two', as: 'index'
+    get 'page-one', to: 'home#version_two_page_one', as: 'page_one'
+    get 'page-two', to: 'home#version_two_page_two', as: 'page_two'
+    get 'page-three', to: 'home#version_two_page_three', as: 'page_three'
+  end
 end
