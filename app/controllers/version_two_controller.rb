@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class VersionTwoController < ApplicationController
   before_action :set_css_file
 
