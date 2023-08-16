@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
+  helper_method :ui_version
   # before_action :set_css_file, only: [
   #   :version_one,
   #   :version_one_page_one,
@@ -55,4 +56,54 @@ class HomeController < ApplicationController
   #   end
   # end
 
+  def root
+    Rails.logger.info "UI_VERSION: #{ui_version}"
+    puts "UI_VERSION: #{ENV['UI_VERSION']}"
+    puts "Template path: home/#{ui_version}/#{ui_version}"
+    puts "Layout path: layouts/#{ui_version}/#{ui_version}"
+    render template: "home/#{ui_version}/#{ui_version}", layout: "layouts/#{ui_version}/#{ui_version}"
+  end
+
+  def page_one
+    render template: "home/#{ui_version}/page_one", layout: "layouts/#{ui_version}/#{ui_version}"
+  end
+
+  def page_two
+    render template: "home/#{ui_version}/page_two", layout: "layouts/#{ui_version}/#{ui_version}"
+  end
+
+  def page_three
+    render template: "home/#{ui_version}/page_three", layout: "layouts/#{ui_version}/#{ui_version}"
+  end
+
+  private
+
+  def ui_version
+    # params[:ui_version] || ENV['UI_VERSION'] || 'version-one'
+    ENV['UI_VERSION'] || 'version-one'
+  end
+
+  def version_one_page_one_path
+    home_page_one_path(ui_version: 'version-one')
+  end
+
+  def version_one_page_two_path
+    home_page_two_path(ui_version: 'version-one')
+  end
+
+  def version_one_page_three_path
+    home_page_three_path(ui_version: 'version-one')
+  end
+
+  def version_two_page_one_path
+    home_page_one_path(ui_version: 'version-two')
+  end
+
+  def version_two_page_two_path
+    home_page_two_path(ui_version: 'version-two')
+  end
+
+  def version_two_page_three_path
+    home_page_three_path(ui_version: 'version-two')
+  end
 end
